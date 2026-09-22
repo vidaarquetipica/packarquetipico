@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Coleção Packs Arquetípicos — Vida Arquetípica por Érika. Uma experiência simbólica e espiritual em formatos digital e ritual físico." />
+  <title>✦ COLEÇÃO PACKS ARQUETÍPICOS ✦ | Vida Arquetípica</title>
+  <style>
+    :root{
+      --purple-950:#130a24;
+      --purple-900:#1d0f35;
+      --purple-800:#2d1754;
+      --purple-700:#4b267c;
+      --purple-500:#7d52b3;
+      --lilac:#cdbcf0;
+      --gold:#d9b56a;
+      --gold-2:#f2d28a;
+      --cream:#fbf8ff;
+      --ink:#23152f;
+      --muted:#6e617b;
+      --white:#fff;
+      --line:rgba(217,181,106,.28);
+      --shadow:0 24px 70px rgba(34,12,58,.14);
+      --radius:28px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(205,188,240,.45), transparent 28%),
+        radial-gradient(circle at 90% 8%, rgba(217,181,106,.16), transparent 25%),
+        linear-gradient(180deg,#fcfaff 0%,#f6f0fb 42%,#fff 100%);
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height:1.65;
+      overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .topbar{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(18px);
+      background:rgba(19,10,36,.82);
+      color:#fff;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+    .nav{
+      max-width:1200px;margin:auto;padding:14px 22px;
+      display:flex;justify-content:space-between;align-items:center;gap:24px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.16em;font-size:12px;text-transform:uppercase}
+    .brand-mark{width:30px;height:30px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold-2);font-size:15px}
+    .nav-links{display:flex;gap:18px;font-size:13px;color:rgba(255,255,255,.78)}
+    .nav-links a:hover{color:#fff}
+    .hero{position:relative;isolation:isolate;padding:96px 22px 68px;overflow:hidden;background:linear-gradient(135deg,var(--purple-950),#2c1653 60%,#44296b)}
+    .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(10px);pointer-events:none;z-index:-1}
+    .hero::before{width:460px;height:460px;right:-120px;top:-160px;background:radial-gradient(circle,rgba(242,210,138,.28),transparent 68%)}
+    .hero::after{width:520px;height:520px;left:-180px;bottom:-260px;background:radial-gradient(circle,rgba(205,188,240,.28),transparent 68%)}
+    .hero-inner{max-width:1200px;margin:auto;text-align:center;color:#fff}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(242,210,138,.3);padding:8px 14px;border-radius:999px;color:#f4ddb0;font-size:12px;letter-spacing:.17em;text-transform:uppercase;margin-bottom:20px}
+    .hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(40px,6vw,72px);line-height:1.02;margin:0 auto 20px;max-width:980px;font-weight:500;letter-spacing:-.03em}
+    .hero h1 span{color:var(--gold-2)}
+    .hero p{max-width:760px;margin:0 auto 30px;color:rgba(255,255,255,.80);font-size:18px}
+    .hero-cta{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:linear-gradient(135deg,var(--gold-2),var(--gold));color:var(--purple-950);font-weight:800;box-shadow:0 12px 36px rgba(217,181,106,.26);transition:.25s}
+    .hero-cta:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(217,181,106,.34)}
+    .section{max-width:1200px;margin:0 auto;padding:84px 22px}
+    .section-head{text-align:center;max-width:790px;margin:0 auto 42px}
+    .section-head h2{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,4.3vw,50px);font-weight:500;line-height:1.1;margin:0 0 14px;color:var(--purple-950)}
+    .section-head p{color:var(--muted);margin:0;font-size:16px}
+    .packs-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+    .pack-card{position:relative;background:rgba(255,255,255,.78);border:1px solid rgba(75,38,124,.11);border-radius:24px;overflow:hidden;box-shadow:0 12px 34px rgba(47,20,73,.08);transition:.28s;display:flex;flex-direction:column}
+    .pack-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(47,20,73,.14);border-color:rgba(217,181,106,.55)}
+    .pack-image-wrap{aspect-ratio:1/1;overflow:hidden;background:#2a153f}
+    .pack-image-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .pack-card:hover img{transform:scale(1.04)}
+    .pack-content{padding:20px 18px 18px;display:flex;flex-direction:column;gap:14px;height:100%}
+    .pack-tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#7c6393}
+    .pack-title{font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1.1;margin:0;color:var(--purple-950)}
+    .pack-intro{font-size:13px;color:#6f6478;margin:0;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+    .gold-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.75}
+    .card-link{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 14px;border-radius:14px;border:1px solid rgba(75,38,124,.14);background:#fff;color:var(--purple-800);font-weight:700;font-size:13px}
+    .card-link:hover{border-color:var(--gold);box-shadow:0 8px 22px rgba(217,181,106,.16)}
+    .portal-band{padding:22px;background:linear-gradient(135deg,#2a1350,#4e2a76);color:#fff}
+    .portal-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:8px 22px}
+    .portal-inner strong{font-family:Georgia,"Times New Roman",serif;font-size:28px;font-weight:500}.portal-inner span{color:rgba(255,255,255,.72);font-size:13px}
+    .pack-section{scroll-margin-top:78px;padding:90px 22px}
+    .pack-wrap{max-width:1200px;margin:auto;background:#fff;border-radius:36px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(75,38,124,.08)}
+    .pack-hero{display:grid;grid-template-columns:minmax(320px,45%) 1fr;align-items:stretch}
+    .pack-hero .visual{min-height:520px;background:linear-gradient(160deg,#2d1754,#6e4b93);display:flex;align-items:center;justify-content:center;padding:26px}
+    .pack-hero .visual img{width:100%;height:100%;object-fit:cover;border-radius:24px;box-shadow:0 22px 55px rgba(0,0,0,.2)}
+    .pack-copy{padding:54px 54px 48px}
+    .pack-copy .kicker{color:#876ca2;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800}
+    .pack-copy h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(34px,4.2vw,58px);line-height:1.02;margin:10px 0 18px;color:var(--purple-950)}
+    .pack-copy h3 .amp{color:var(--gold)}
+    .pack-copy .lead{font-size:16px;color:#5d5066;margin:0 0 22px}
+    .deep-copy{color:#625667;font-size:15px}
+    .benefits{margin:25px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+    .benefits li{display:flex;gap:12px;align-items:flex-start;color:#4b3d54}
+    .benefits li::before{content:"✦";flex:none;color:#b78931;font-weight:900;margin-top:2px}
+    .price-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:30px}
+    .price-card{padding:19px 18px;border-radius:20px;border:1px solid rgba(75,38,124,.10);background:linear-gradient(180deg,#fff,#fbf7ff)}
+    .price-card.physical{background:linear-gradient(145deg,#f9efd3,#fffaf0);border-color:rgba(217,181,106,.45)}
+    .price-label{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#7b687f;font-weight:800}.price{font-family:Georgia,"Times New Roman",serif;font-size:34px;color:var(--purple-950);margin:4px 0}.price-desc{font-size:12px;color:#6f6478;margin:0 0 14px}.buy-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:12px 14px;border-radius:12px;font-size:13px;font-weight:800;background:linear-gradient(135deg,#3d2167,#6d469a);color:#fff}.physical .buy-btn{background:linear-gradient(135deg,#9f7627,#d5aa52);color:#1b1029}.buy-btn:hover{filter:brightness(1.04);transform:translateY(-1px)}
+    .home-delivery{margin-top:18px;padding:13px 14px;border-radius:14px;background:linear-gradient(90deg,rgba(75,38,124,.06),rgba(217,181,106,.08));font-size:12px;color:#5f526b}
+    .home-delivery strong{color:var(--purple-900)}
+    .pack-section:nth-of-type(2){background:linear-gradient(180deg,#faf6fd,#f4edfb)}
+    .pack-section:nth-of-type(3){background:linear-gradient(180deg,#f8f2fc,#fff)}
+    .pack-section:nth-of-type(4){background:linear-gradient(180deg,#fff,#f5effa)}
+    .closing{padding:86px 22px 100px;text-align:center}
+    .closing-card{max-width:980px;margin:auto;padding:52px 28px;border-radius:32px;background:linear-gradient(135deg,#211035,#4b2970);color:#fff;box-shadow:0 24px 70px rgba(34,12,58,.22);position:relative;overflow:hidden}
+    .closing-card::after{content:"✦";position:absolute;right:7%;top:7%;font-size:90px;color:rgba(242,210,138,.15)}
+    .closing-card h2{font-family:Georgia,"Times New Roman",serif;font-weight:500;font-size:clamp(34px,4vw,54px);margin:0 0 12px}.closing-card p{max-width:690px;margin:0 auto 26px;color:rgba(255,255,255,.78)}
+    footer{padding:28px 22px;background:#140b24;color:rgba(255,255,255,.56);font-size:12px}.footer-inner{max-width:1200px;margin:auto;display:flex;justify-content:space-between;gap:20px;align-items:center}
+    .float-cta{position:fixed;right:18px;bottom:18px;z-index:40;display:inline-flex;align-items:center;gap:8px;padding:13px 16px;border-radius:999px;background:linear-gradient(135deg,#d6b05e,#f1d791);color:#23152f;font-weight:900;font-size:12px;box-shadow:0 18px 40px rgba(20,11,36,.28)}
+    @media (max-width:1020px){.packs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.pack-hero{grid-template-columns:1fr}.pack-hero .visual{min-height:420px}.pack-copy{padding:38px 34px}}
+    @media (max-width:680px){.nav{padding:12px 16px}.nav-links{display:none}.hero{padding:76px 18px 54px}.hero p{font-size:16px}.section,.pack-section,.closing{padding-left:16px;padding-right:16px}.packs-grid{grid-template-columns:1fr}.portal-inner{flex-direction:column;align-items:flex-start;padding:0 16px}.pack-hero .visual{min-height:340px;padding:16px}.pack-copy{padding:30px 22px}.price-grid{grid-template-columns:1fr}.pack-copy h3{font-size:42px}.footer-inner{flex-direction:column;align-items:flex-start}.float-cta{right:12px;bottom:12px}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="nav">
+      <a class="brand" href="#top"><span class="brand-mark">✦</span> Vida Arquetípica</a>
+      <nav class="nav-links" aria-label="Navegação principal">
+        <a href="#colecao">Coleção</a>
+        <a href="#pack1">Dinheiro</a>
+        <a href="#pack2">Magnetismo</a>
+        <a href="#pack3">Autocuidado</a>
+        <a href="#pack4">Autoridade</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">✦ UM PORTAL PARA A SUA NOVA FASE ✦</div>
+        <h1>✦ COLEÇÃO <span>PACKS ARQUETÍPICOS</span> ✦</h1>
+        <p>Escolha a energia simbólica que conversa com o momento que você vive e entre em uma experiência criada para envolver intenção, imagem, ritual e transformação.</p>
+        <a class="hero-cta" href="#colecao">Conheça os Packs <span>↓</span></a>
+      </div>
+    </section>
+
+    <section class="section" id="colecao">
+      <div class="section-head">
+        <h2>Escolha o portal que mais combina com o que você deseja viver.</h2>
+        <p>Clique em qualquer Pack para descer até a explicação completa e conhecer as duas formas de receber a sua experiência.</p>
+      </div>
+      <div class="packs-grid">
+        <article class="pack-card">
+          <a href="#pack1" class="pack-image-wrap" aria-label="Conhecer Pack Arquetípico Dinheiro e Fartura"><img src="assets/pack1.jpeg" alt="Pack Arquetípico Dinheiro & Fartura" loading="eager"></a>
+          <div class="pack-content"><div class="pack-tag">Pack Arquetípico</div><h3 class="pack-title">Dinheiro &amp; Fartura</h3><p class="pack-intro">A beleza abundante da Rainha de Ouros — símbolo de prosperidade que chega com calma, ordem e plenitude.</p><div class="gold-line"></div><a class="card-link" href="#pack1">Quero conhecer ✦</a></div>
+        </article>
+        <article class="pack-card">
+          <a href="#pack2" class="pack-image-wrap" aria-label="Conhecer Pack Arquetípico Magnetismo e Poder Pessoal"><img src="assets/pack2.jpeg" alt="Pack Arquetípico Magnetismo & Poder Pessoal" loading="lazy"></a>
+          <div class="pack-content"><div class="pack-tag">Pack Arquetípico</div><h3 class="pack-title">Magnetismo &amp; Poder Pessoal</h3><p class="pack-intro">A imagem de uma mulher radiante ao lado da Pantera Negra — símbolo de força, mistério e magnetismo natural.</p><div class="gold-line"></div><a class="card-link" href="#pack2">Quero conhecer ✦</a></div>
+        </article>
+        <article class="pack-card">
+          <a href="#pack3" class="pack-image-wrap" aria-label="Conhecer Pack Arquetípico Emagrecimento, Bem-Estar e Autocuidado"><img src="assets/pack3.jpeg" alt="Pack Arquetípico Emagrecimento, Bem-Estar & Autocuidado" loading="lazy"></a>
+          <div class="pack-content"><div class="pack-tag">Pack Arquetípico</div><h3 class="pack-title">Emagrecimento, Bem-Estar &amp; Autocuidado</h3><p class="pack-intro">Uma mulher em transformação, com uma borboleta que vai do peito até o chakra básico — símbolo de renascimento, leveza e mudança profunda.</p><div class="gold-line"></div><a class="card-link" href="#pack3">Quero conhecer ✦</a></div>
+        </article>
+        <article class="pack-card">
+          <a href="#pack4" class="pack-image-wrap" aria-label="Conhecer Pack Arquetípico Autoridade e Visibilidade"><img src="assets/pack4.jpeg" alt="Pack Arquetípico Autoridade & Visibilidade" loading="lazy"></a>
+          <div class="pack-content"><div class="pack-tag">Pack Arquetípico</div><h3 class="pack-title">Autoridade &amp; Visibilidade</h3><p class="pack-intro">A imagem forte e segura de uma mulher séria e focada ao lado do Lobo — símbolo de liderança, coragem e sabedoria para guiar.</p><div class="gold-line"></div><a class="card-link" href="#pack4">Quero conhecer ✦</a></div>
+        </article>
+      </div>
+    </section>
+
+    <div class="portal-band"><div class="portal-inner"><div><strong>Uma experiência para cada versão de você.</strong><br><span>Seu momento. Sua intenção. Seu Pack.</span></div><a href="#colecao" class="hero-cta">Voltar à coleção ↑</a></div></div>
+
+    <section class="pack-section" id="pack1">
+      <div class="pack-wrap">
+        <div class="pack-hero">
+          <div class="visual"><img src="assets/pack1.jpeg" alt="Pack Arquetípico Dinheiro & Fartura — Rainha de Ouros"></div>
+          <div class="pack-copy">
+            <div class="kicker">✦ PACK ARQUETÍPICO</div>
+            <h3>Dinheiro <span class="amp">&amp;</span> Fartura</h3>
+            <p class="lead"><strong>Capa:</strong> A beleza abundante da Rainha de Ouros — símbolo de prosperidade que chega com calma, ordem e plenitude.</p>
+            <div class="deep-copy">
+              <p>Esse pack é o seu portal para manifestar, atrair e receber dinheiro com leveza, facilidade e ordem — sem luta, sem desespero, sem a sensação de que ele sempre escapa.</p>
+              <p>Os arquétipos começam trabalhando diretamente no seu campo energético: quando você carrega medos, ansiedades, confusão ou a sensação de "nunca ser suficiente", acaba atraindo mais dessa mesma energia de escassez. Ao limpar o seu campo, colocar ordem nos seus pensamentos e sentimentos e se abrir verdadeiramente para receber, é como se você abrisse uma porta para que a fartura flua em sua vida sem bloqueios, sem estagnação, sem esforço excessivo.</p>
+              <p>Depois desse trabalho energético profundo, você estará pronta para enxergar e receber a abundância de uma forma como nunca antes — presente em pequenos detalhes, em oportunidades que surgem, em caminhos que se abrem naturalmente.</p>
+            </div>
+            <ul class="benefits">
+              <li>Uma tela potente com a combinação de até 4 arquétipos, criada para amplificar sua capacidade de manifestar e atrair mais dinheiro e fartura;</li>
+              <li>Guia em PDF com orientações completas sobre o seu combo arquetípico, como cada energia vai te auxiliar + explicação detalhada para ativar da forma correta;</li>
+              <li>Ancoramento Potente de todos os arquétipos, para sentir a energia sendo ativada na hora, de forma intensa e presente;</li>
+              <li>Ho’oponopono com Decreto potente, para limpar tudo o que bloqueia, impede e traz estagnações — será o seu companheiro diário de limpeza e renovação.</li>
+            </ul>
+            <div class="price-grid">
+              <div class="price-card"><div class="price-label">💻 DIGITAL</div><div class="price">R$ 97,00</div><p class="price-desc">Tela + Guia + Ancoramento + Prática de Ho'oponopono/Decreto</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Escolher Digital ✦</a></div>
+              <div class="price-card physical"><div class="price-label">📦 PACK RITUAL FÍSICO</div><div class="price">R$ 289,90</div><p class="price-desc">Tudo do digital + quadro A4 + guia impresso + mimo/brinde especial + carta personalizada</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Quero o Ritual Físico ✦</a></div>
+            </div>
+            <div class="home-delivery"><strong>O que chega na sua casa no Pack Físico?</strong><br>Enviado pelos Correios para todo o Brasil 📮<br><br>• Um brinde especial escolhido de acordo com a sua energia — o seu verdadeiro ímã de manifestação;<br>• Guia impresso, para ter todas as orientações sempre em mãos;<br>• Quadro A4 com o seu combo de arquétipos, para colocar onde desejar e manter a energia da prosperidade materializada no seu dia a dia;<br>• Uma carta canalizada por mim, Érika do Vida Arquetípica, com uma mensagem espiritual exclusiva para você;<br>• Todo o meu carinho e as energias que emanho especialmente para cada pacote.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pack-section" id="pack2">
+      <div class="pack-wrap">
+        <div class="pack-hero">
+          <div class="visual"><img src="assets/pack2.jpeg" alt="Pack Arquetípico Magnetismo & Poder Pessoal — Pantera Negra"></div>
+          <div class="pack-copy">
+            <div class="kicker">✦ PACK ARQUETÍPICO</div>
+            <h3>Magnetismo <span class="amp">&amp;</span> Poder Pessoal</h3>
+            <p class="lead"><strong>Capa:</strong> A imagem de uma mulher radiante ao lado da Pantera Negra — seu animal de poder, símbolo de força, mistério e magnetismo natural.</p>
+            <div class="deep-copy">
+              <p>Esse pack é para você que quer resgatar o seu poder pessoal, reacender o seu brilho e se tornar magnética — seja para atrair clientes, oportunidades ou relacionamentos que te valorizem.</p>
+              <p>Os arquétipos começam limpando o seu campo energético de tudo o que apaga a sua luz: inseguranças, baixa autoestima, medo de se mostrar, a sensação de que "não é boa o suficiente". Quando você carrega essas energias, acaba atraindo mais situações que reforçam essa visão de si mesma. Ao limpar o seu campo, se enxergar de forma potente e cuidar da sua energia pessoal, é como se você abrisse um portal para o magnetismo, o poder e o brilho que já existem dentro de você.</p>
+              <p>Depois desse trabalho, você vai perceber o seu brilho voltando naturalmente — e com ele, tudo ao seu redor se expande, se transforma e se alinha com a mulher poderosa que você é.</p>
+            </div>
+            <ul class="benefits">
+              <li>Uma tela potente com a combinação de até 4 arquétipos, criada para amplificar o seu Magnetismo e Poder Pessoal;</li>
+              <li>Guia em PDF com orientações completas sobre o seu combo arquetípico, como cada energia vai te auxiliar + explicação detalhada para ativar da forma correta;</li>
+              <li>Ancoramento Potente de todos os arquétipos, para sentir a energia sendo ativada na hora, de forma intensa e presente;</li>
+              <li>Ho’oponopono com Decreto potente, para limpar tudo o que bloqueia, impede e traz estagnações — será o seu companheiro diário de limpeza e renovação.</li>
+            </ul>
+            <div class="price-grid">
+              <div class="price-card"><div class="price-label">💻 DIGITAL</div><div class="price">R$ 97,00</div><p class="price-desc">Tela + Guia + Ancoramento + Prática de Ho'oponopono/Decreto</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Escolher Digital ✦</a></div>
+              <div class="price-card physical"><div class="price-label">📦 PACK RITUAL FÍSICO</div><div class="price">R$ 289,90</div><p class="price-desc">Tudo do digital + quadro A4 + guia impresso + mimo/brinde especial + carta personalizada</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Quero o Ritual Físico ✦</a></div>
+            </div>
+            <div class="home-delivery"><strong>O que chega na sua casa no Pack Físico?</strong><br>Enviado pelos Correios para todo o Brasil 📮<br><br>• Um brinde especial escolhido de acordo com a sua energia — o seu verdadeiro ímã de manifestação;<br>• Guia impresso, para ter todas as orientações sempre em mãos;<br>• Quadro A4 com o seu combo de arquétipos, para colocar onde desejar e manter o seu magnetismo presente no seu espaço;<br>• Uma carta canalizada por mim, Érika do Vida Arquetípica, com uma mensagem espiritual exclusiva para você;<br>• Todo o meu carinho e as energias que emanho especialmente para cada pacote.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pack-section" id="pack3">
+      <div class="pack-wrap">
+        <div class="pack-hero">
+          <div class="visual"><img src="assets/pack3.jpeg" alt="Pack Arquetípico Emagrecimento, Bem-Estar & Autocuidado — borboleta e transformação"></div>
+          <div class="pack-copy">
+            <div class="kicker">✦ PACK ARQUETÍPICO</div>
+            <h3>Emagrecimento, Bem-Estar <span class="amp">&amp;</span> Autocuidado</h3>
+            <p class="lead"><strong>Capa:</strong> A imagem delicada e poderosa de uma mulher em transformação, com uma borboleta que vai do seu peito até o chakra básico — símbolo de renascimento, leveza e mudança profunda.</p>
+            <div class="deep-copy">
+              <p>Esse pack traz uma energia de leveza, frescor, bem-estar e transformação para a sua relação com o seu corpo e consigo mesma.</p>
+              <p>Os arquétipos começam trazendo leveza para o seu campo vibracional: quando você se sente pesada, ansiosa, em conflito com a comida ou consigo mesma, as compulsões ganham força e o processo de mudança parece uma luta. Ao transformar o seu campo, você se sente mais leve, calma, viva e em paz — e com isso, as compulsões diminuem naturalmente, você se abre para o autocuidado e o processo de transformação flui com muito mais suavidade.</p>
+              <p>Com esse combo, fica mais fácil caminhar em direção às suas metas, honrar o seu corpo e se tornar a sua melhor versão — com carinho, sem pressa, sem culpa.</p>
+            </div>
+            <ul class="benefits">
+              <li>Uma tela potente com a combinação de até 4 arquétipos, criada para apoiar o seu processo de emagrecimento, bem-estar e autocuidado;</li>
+              <li>Guia em PDF com orientações completas sobre o seu combo arquetípico, como cada energia vai te auxiliar + explicação detalhada para ativar da forma correta;</li>
+              <li>Ancoramento Potente de todos os arquétipos, para sentir a energia sendo ativada na hora, de forma intensa e presente;</li>
+              <li>Ho’oponopono com Decreto potente, para limpar tudo o que bloqueia, impede e traz estagnações — será o seu companheiro diário de limpeza e renovação.</li>
+            </ul>
+            <div class="price-grid">
+              <div class="price-card"><div class="price-label">💻 DIGITAL</div><div class="price">R$ 97,00</div><p class="price-desc">Tela + Guia + Ancoramento + Prática de Ho'oponopono/Decreto</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Escolher Digital ✦</a></div>
+              <div class="price-card physical"><div class="price-label">📦 PACK RITUAL FÍSICO</div><div class="price">R$ 289,90</div><p class="price-desc">Tudo do digital + quadro A4 + guia impresso + mimo/brinde especial + carta personalizada</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Quero o Ritual Físico ✦</a></div>
+            </div>
+            <div class="home-delivery"><strong>O que chega na sua casa no Pack Físico?</strong><br>Enviado pelos Correios para todo o Brasil 📮<br><br>• Um brinde especial escolhido de acordo com a sua energia — o seu verdadeiro ímã de manifestação;<br>• Guia impresso, para ter todas as orientações sempre em mãos;<br>• Quadro A4 com o seu combo de arquétipos, para colocar onde desejar e manter a energia de transformação presente no seu dia a dia;<br>• Uma carta canalizada por mim, Érika do Vida Arquetípica, com uma mensagem espiritual exclusiva para você;<br>• Todo o meu carinho e as energias que emanho especialmente para cada pacote.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pack-section" id="pack4">
+      <div class="pack-wrap">
+        <div class="pack-hero">
+          <div class="visual"><img src="assets/pack4.jpeg" alt="Pack Arquetípico Autoridade & Visibilidade — Lobo"></div>
+          <div class="pack-copy">
+            <div class="kicker">✦ PACK ARQUETÍPICO</div>
+            <h3>Autoridade <span class="amp">&amp;</span> Visibilidade</h3>
+            <p class="lead"><strong>Capa:</strong> A imagem forte e segura de uma mulher séria e focada ao lado do Lobo — símbolo de liderança, coragem e sabedoria para guiar.</p>
+            <div class="deep-copy">
+              <p>Feito especialmente para terapeutas, empresárias, empreendedoras e autônomas que querem sair da sombra, assumir o seu lugar e ser vistas com respeito e confiança.</p>
+              <p>Esse pack trabalha para que você deixe de lado a postura de "ser boazinha para agradar" e assuma o seu poder de comandar, guiar e se posicionar com autoridade — sem perder a sua essência, a sua doçura ou o seu propósito. Os arquétipos fortalecem a sua mentalidade, fazendo com que você já se enxergue como a líder que é. A partir disso, as pessoas passam a confiar mais no seu trabalho, você é mais respeitada e guiar com autoridade se torna natural, não forçado.</p>
+              <p>Sua visibilidade aumenta, sua voz ganha força e o seu trabalho chega a quem realmente precisa — com a segurança de quem sabe o seu valor.</p>
+            </div>
+            <ul class="benefits">
+              <li>Uma tela potente com a combinação de até 4 arquétipos, criada para amplificar a sua Autoridade e Visibilidade profissional;</li>
+              <li>Guia em PDF com orientações completas sobre o seu combo arquetípico, como cada energia vai te auxiliar + explicação detalhada para ativar da forma correta;</li>
+              <li>Ancoramento Potente de todos os arquétipos, para sentir a energia sendo ativada na hora, de forma intensa e presente;</li>
+              <li>Ho’oponopono com Decreto potente, para limpar tudo o que bloqueia, impede e traz estagnações — será o seu companheiro diário de limpeza e renovação.</li>
+            </ul>
+            <div class="price-grid">
+              <div class="price-card"><div class="price-label">💻 DIGITAL</div><div class="price">R$ 97,00</div><p class="price-desc">Tela + Guia + Ancoramento + Prática de Ho'oponopono/Decreto</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Escolher Digital ✦</a></div>
+              <div class="price-card physical"><div class="price-label">📦 PACK RITUAL FÍSICO</div><div class="price">R$ 289,90</div><p class="price-desc">Tudo do digital + quadro A4 + guia impresso + mimo/brinde especial + carta personalizada</p><a class="buy-btn" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">Quero o Ritual Físico ✦</a></div>
+            </div>
+            <div class="home-delivery"><strong>O que chega na sua casa no Pack Físico?</strong><br>Enviado pelos Correios para todo o Brasil 📮<br><br>• Um brinde especial escolhido de acordo com a sua energia — o seu verdadeiro ímã de manifestação;<br>• Guia impresso, para ter todas as orientações sempre em mãos;<br>• Quadro A4 com o seu combo de arquétipos, para colocar onde desejar e manter a energia de liderança e visibilidade presente no seu espaço;<br>• Uma carta canalizada por mim, Érika do Vida Arquetípica, com uma mensagem espiritual exclusiva para você;<br>• Todo o meu carinho e as energias que emanho especialmente para cada pacote.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-card">
+        <h2>Seu portal começa com uma escolha.</h2>
+        <p>Escolha o Pack que conversa com a sua intenção e entre em uma experiência feita para você.</p>
+        <a class="hero-cta" href="#colecao">Ver a coleção novamente ✦</a>
+      </div>
+    </section>
+  </main>
+
+  <a class="float-cta" href="https://wa.me/message/HYCA7N7T73X4N1" target="_blank" rel="noopener">✦ Quero escolher meu Pack</a>
+
+  <footer>
+    <div class="footer-inner"><div>✦ VIDA ARQUETÍPICA — ÉRIKA</div><div>Uma experiência de transformação.</div></div>
+  </footer>
+
+  <script>
+    // Mantém a sensação de portal e rolagem suave em navegadores que respeitam prefers-reduced-motion.
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', event => {
+        const target = document.querySelector(link.getAttribute('href'));
+        if (!target) return;
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  </script>
+</body>
+</html>
